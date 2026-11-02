@@ -1,0 +1,128 @@
+[
+  {
+    "ID_Defecto": "D01",
+    "Defecto": "Raya vertical",
+    "ID_Causa": "C01",
+    "Causa": "Rotura de aguja",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D01",
+    "Defecto": "Raya vertical",
+    "ID_Causa": "C02",
+    "Causa": "Aguja desgastada",
+    "Estado_causa": "Probable"
+  },
+  {
+    "ID_Defecto": "D02",
+    "Defecto": "Raya horizontal / zona sin tejer",
+    "ID_Causa": "C10",
+    "Causa": "Problema interno del mecanismo",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D03",
+    "Defecto": "Vacío o falta de tejido",
+    "ID_Causa": "C03",
+    "Causa": "Rotura de hilo",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D03",
+    "Defecto": "Vacío o falta de tejido",
+    "ID_Causa": "C04",
+    "Causa": "Acumulación de hilo",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D03",
+    "Defecto": "Vacío o falta de tejido",
+    "ID_Causa": "C05",
+    "Causa": "Hilo fuera del alimentador",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D04",
+    "Defecto": "Defecto de tejido en el elástico",
+    "ID_Causa": "C05",
+    "Causa": "Hilo fuera del alimentador",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D04",
+    "Defecto": "Defecto de tejido en el elástico",
+    "ID_Causa": "C09",
+    "Causa": "Avería disparador elástico",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D05",
+    "Defecto": "Agujero pequeño",
+    "ID_Causa": "C05",
+    "Causa": "Hilo fuera del alimentador",
+    "Estado_causa": "Observada inicial"
+  },
+  {
+    "ID_Defecto": "D05",
+    "Defecto": "Agujero pequeño",
+    "ID_Causa": "C10",
+    "Causa": "Problema interno del mecanismo",
+    "Estado_causa": "Confirmable"
+  },
+  {
+    "ID_Defecto": "D06",
+    "Defecto": "Mancha",
+    "ID_Causa": "C12",
+    "Causa": "Lubricante sobre la prenda",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D06",
+    "Defecto": "Mancha",
+    "ID_Causa": "C13",
+    "Causa": "Materia prima contaminada",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D07",
+    "Defecto": "Falta de cierre del tejido en el elástico",
+    "ID_Causa": "C09",
+    "Causa": "Avería disparador elástico",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D08",
+    "Defecto": "Patrón incorrecto",
+    "ID_Causa": "C11",
+    "Causa": "Anomalía sistema/patrón",
+    "Estado_causa": "Probable"
+  },
+  {
+    "ID_Defecto": "D09",
+    "Defecto": "Tejido incorrecto parcial",
+    "ID_Causa": "C06",
+    "Causa": "Hilo hacia otro alimentador",
+    "Estado_causa": "Probable"
+  },
+  {
+    "ID_Defecto": "D09",
+    "Defecto": "Tejido incorrecto parcial",
+    "ID_Causa": "C07",
+    "Causa": "Tensión inadecuada",
+    "Estado_causa": "Probable"
+  },
+  {
+    "ID_Defecto": "D09",
+    "Defecto": "Tejido incorrecto parcial",
+    "ID_Causa": "C08",
+    "Causa": "Disparador fuera de posición",
+    "Estado_causa": "Observada"
+  },
+  {
+    "ID_Defecto": "D09",
+    "Defecto": "Tejido incorrecto parcial",
+    "ID_Causa": "C10",
+    "Causa": "Problema interno del mecanismo",
+    "Estado_causa": "Probable"
+  }
+]

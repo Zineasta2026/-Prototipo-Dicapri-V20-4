@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "fuente": "BASE DE DATOS_ DICAPRI_2025_75%.xlsx",
+  "naturaleza_datos": "Reconstruidos/sintéticos salvo campos expresamente proporcionados por la empresa",
+  "archivos": [
+    "maquinas.json",
+    "productos.json",
+    "defectos_causas.json",
+    "fallas_amef.json",
+    "resumen_mensual.json",
+    "kpi_maquinas.json",
+    "linea_base.json",
+    "pareto_defectos_ordenado.json"
+  ]
+}

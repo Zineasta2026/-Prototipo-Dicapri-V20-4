@@ -1,0 +1,74 @@
+[
+  {
+    "ID_Defecto": "D03",
+    "Defecto": "Vacío o falta de tejido",
+    "Cantidad": 55769,
+    "Porcentaje": 0.23644758375660344,
+    "Acumulado": 0.4826975095606753,
+    "Acumulado_ordenado": 0.23644758375660344
+  },
+  {
+    "ID_Defecto": "D01",
+    "Defecto": "Raya vertical",
+    "Cantidad": 38534,
+    "Porcentaje": 0.16337519396935496,
+    "Acumulado": 0.16337519396935496,
+    "Acumulado_ordenado": 0.3998227777259584
+  },
+  {
+    "ID_Defecto": "D09",
+    "Defecto": "Tejido incorrecto parcial",
+    "Cantidad": 35537,
+    "Porcentaje": 0.1506686113066115,
+    "Acumulado": 1,
+    "Acumulado_ordenado": 0.5504913890325699
+  },
+  {
+    "ID_Defecto": "D04",
+    "Defecto": "Defecto de tejido en el elástico",
+    "Cantidad": 28972,
+    "Porcentaje": 0.12283453884050843,
+    "Acumulado": 0.6055320484011837,
+    "Acumulado_ordenado": 0.6733259278730783
+  },
+  {
+    "ID_Defecto": "D06",
+    "Defecto": "Mancha",
+    "Cantidad": 23893,
+    "Porcentaje": 0.1013007606142575,
+    "Acumulado": 0.7553527062434814,
+    "Acumulado_ordenado": 0.7746266884873358
+  },
+  {
+    "ID_Defecto": "D02",
+    "Defecto": "Raya horizontal / zona sin tejer",
+    "Cantidad": 19547,
+    "Porcentaje": 0.08287473183471691,
+    "Acumulado": 0.24624992580407187,
+    "Acumulado_ordenado": 0.8575014203220528
+  },
+  {
+    "ID_Defecto": "D08",
+    "Defecto": "Patrón incorrecto",
+    "Cantidad": 14551,
+    "Porcentaje": 0.06169285429615623,
+    "Acumulado": 0.8493313886933885,
+    "Acumulado_ordenado": 0.919194274618209
+  },
+  {
+    "ID_Defecto": "D05",
+    "Defecto": "Agujero pequeño",
+    "Cantidad": 11444,
+    "Porcentaje": 0.04851989722804013,
+    "Acumulado": 0.6540519456292239,
+    "Acumulado_ordenado": 0.9677141718462492
+  },
+  {
+    "ID_Defecto": "D07",
+    "Defecto": "Falta de cierre del tejido en el elástico",
+    "Cantidad": 7615,
+    "Porcentaje": 0.032285828153750924,
+    "Acumulado": 0.7876385343972323,
+    "Acumulado_ordenado": 1.0000000000000002
+  }
+]

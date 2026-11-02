@@ -1,0 +1,39 @@
+{
+  "KPI": {
+    "valor": "Valor",
+    "unidad": "Unidad"
+  },
+  "Producción total": {
+    "valor": 7647112,
+    "unidad": "piezas"
+  },
+  "Defectuosas": {
+    "valor": 235862,
+    "unidad": "piezas"
+  },
+  "% defectuosas": {
+    "valor": 0.03084327782828341,
+    "unidad": "%"
+  },
+  "Disponibilidad": {
+    "valor": 0.9787453812809112,
+    "unidad": "%"
+  },
+  "Rendimiento": {
+    "valor": 0.9389874604586101,
+    "unidad": "%"
+  },
+  "OEE reconstruido": {
+    "valor": 0.890683753485469,
+    "unidad": "%"
+  },
+  "Eventos de falla": {
+    "valor": 34326,
+    "unidad": "eventos"
+  },
+  "_metadata": {
+    "tipo": "Base reconstruida/sintética 2025",
+    "uso": "Calibración y demostración del prototipo digital",
+    "restriccion": "No constituye un historial real ni evidencia de mejora industrial"
+  }
+}
