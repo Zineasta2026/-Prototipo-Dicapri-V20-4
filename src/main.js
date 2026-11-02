@@ -1448,12 +1448,13 @@ function formatDecimal(value, decimals = 2) {
 async function loadDicapriData() {
   try {
 const responses = await Promise.all([
-  fetch('/data/maquinas.json'),
-  fetch('/data/kpi_maquinas.json'),
-  fetch('/data/linea_base.json'),
-  fetch('/data/pareto_defectos_ordenado.json'),
-  fetch('/data/fallas_amef.json'),
-  fetch('/data/defectos_causas.json')
+  fetch(`${import.meta.env.BASE_URL}data/maquinas.json`),
+  fetch(`${import.meta.env.BASE_URL}data/kpi_maquinas.json`)
+,
+  fetch(`${import.meta.env.BASE_URL}data/linea_base.json`),
+  fetch(`${import.meta.env.BASE_URL}data/pareto_defectos_ordenado.json`),
+  fetch(`${import.meta.env.BASE_URL}data/fallas_amef.json`),
+  fetch(`${import.meta.env.BASE_URL}data/defectos_causas.json`)
 ])
 
     if (responses.some(response => !response.ok)) {
