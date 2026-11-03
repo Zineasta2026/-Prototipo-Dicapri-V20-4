@@ -1500,7 +1500,7 @@ const responses = await Promise.all([
 
 async function loadModelComparison() {
   try {
-    const response = await fetch('/data/comparacion_modelos.json')
+    const response = await fetch(`${import.meta.env.BASE_URL}data/comparacion_modelos.json`)
     if (!response.ok) throw new Error('Comparación no disponible')
     const comparison = await response.json()
     const rf = comparison.modelos?.['Random Forest']
