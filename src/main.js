@@ -4863,6 +4863,8 @@ experimentPanel.innerHTML=`
     <label>Eficacia jefe de planta (%) <input id="expSupervisor" type="number" min="0" max="100" value="83"></label>
     <label>Frecuencia incidentes (%) <input id="expIncident" type="number" min="0" max="100" step="0.01" value="0.4"></label>
     <label>Defecto base (%) <input id="expBaseDefect" type="number" min="0" max="100" step="0.01" value="2.5"></label>
+    <label>Incremento de desgaste por ciclo <input id="expWearStep" type="number" min="0" max="0.1" step="0.001" value="0.006"></label>
+    <label>Recuperación natural por ciclo <input id="expNaturalRecovery" type="number" min="0" max="0.1" step="0.001" value="0.007"></label>
     <label>Duración parada crítica (ciclos) <input id="expCritical" type="number" min="1" max="10000" value="144"></label>
   </div>
   <div class="validation-experiment-actions"><button type="button" id="expRun">Ejecutar réplicas comparables</button><button type="button" id="expExport" disabled>Exportar CSV de corridas</button></div>
@@ -4885,7 +4887,7 @@ expField('expMode').addEventListener('change',()=>{
 })
 expField('expRun').addEventListener('click',()=>{
   const p={...DEFAULT_PARAMS,mode:expField('expMode').value,scenario:expField('expScenario').value,units:Number(expField('expUnits').value),replicates:Number(expField('expReplicas').value),seed:Number(expField('expSeed').value),threshold:Number(expField('expThreshold').value),operatorEfficacy:Number(expField('expOperator').value)/100,supervisorEfficacy:Number(expField('expSupervisor').value)/100,criticalDuration:Number(expField('expCritical').value),incidentRate:Number(expField('expIncident').value)/100,baseDefect:Number(expField('expBaseDefect').value)/100}
-  if(!Number.isInteger(p.units)||p.units<100||p.units>100000||!Number.isInteger(p.replicates)||p.replicates<2||p.replicates>1000||!Number.isInteger(p.seed)||p.seed<0||p.seed>4294967295||!Number.isInteger(p.threshold)||p.threshold<1||p.threshold>24||!Number.isFinite(p.operatorEfficacy)||p.operatorEfficacy<0||p.operatorEfficacy>1||!Number.isFinite(p.supervisorEfficacy)||p.supervisorEfficacy<0||p.supervisorEfficacy>1||!Number.isFinite(p.incidentRate)||p.incidentRate<0||p.incidentRate>1||!Number.isFinite(p.baseDefect)||p.baseDefect<0||p.baseDefect>1||!Number.isInteger(p.criticalDuration)||p.criticalDuration<1||p.criticalDuration>10000){expField('expResult').textContent='Parámetros inválidos: revisa los límites de cada campo.';return}
+  if(!Number.isInteger(p.units)||p.units<100||p.units>100000||!Number.isInteger(p.replicates)||p.replicates<2||p.replicates>1000||!Number.isInteger(p.seed)||p.seed<0||p.seed>4294967295||!Number.isInteger(p.threshold)||p.threshold<1||p.threshold>24||!Number.isFinite(p.operatorEfficacy)||p.operatorEfficacy<0||p.operatorEfficacy>1||!Number.isFinite(p.supervisorEfficacy)||p.supervisorEfficacy<0||p.supervisorEfficacy>1||!Number.isFinite(p.incidentRate)||p.incidentRate<0||p.incidentRate>1||!Number.isFinite(p.baseDefect)||p.baseDefect<0||p.baseDefect>1||!Number.isFinite(p.wearStep)||p.wearStep<0||p.wearStep>0.1||!Number.isFinite(p.naturalRecovery)||p.naturalRecovery<0||p.naturalRecovery>0.1||!Number.isInteger(p.criticalDuration)||p.criticalDuration<1||p.criticalDuration>10000){expField('expResult').textContent='Parámetros inválidos: revisa los límites de cada campo.';return}
   const result=runExperiment(p)
   experimentRows=result.rows.map(row=>({...row,params:p}))
   const s=result.summary
@@ -4907,7 +4909,7 @@ expField('expExport').addEventListener('click',()=>{
 function getExperimentalParams(){
   return {...DEFAULT_PARAMS,mode:expField('expMode').value,scenario:expField('expScenario').value,units:Number(expField('expUnits').value),replicates:Number(expField('expReplicas').value),seed:Number(expField('expSeed').value),threshold:Number(expField('expThreshold').value),operatorEfficacy:Number(expField('expOperator').value)/100,supervisorEfficacy:Number(expField('expSupervisor').value)/100,criticalDuration:Number(expField('expCritical').value),incidentRate:Number(expField('expIncident').value)/100,baseDefect:Number(expField('expBaseDefect').value)/100}
 }
-function validExperimentalParams(p){return Number.isInteger(p.units)&&p.units>=100&&p.units<=100000&&Number.isInteger(p.replicates)&&p.replicates>=2&&p.replicates<=1000&&Number.isInteger(p.seed)&&p.seed>=0&&p.seed<=4294967295&&Number.isInteger(p.threshold)&&p.threshold>=1&&p.threshold<=24&&[p.operatorEfficacy,p.supervisorEfficacy,p.incidentRate,p.baseDefect].every(x=>Number.isFinite(x)&&x>=0&&x<=1)&&Number.isInteger(p.criticalDuration)&&p.criticalDuration>=1&&p.criticalDuration<=10000}
+function validExperimentalParams(p){return Number.isInteger(p.units)&&p.units>=100&&p.units<=100000&&Number.isInteger(p.replicates)&&p.replicates>=2&&p.replicates<=1000&&Number.isInteger(p.seed)&&p.seed>=0&&p.seed<=4294967295&&Number.isInteger(p.threshold)&&p.threshold>=1&&p.threshold<=24&&[p.operatorEfficacy,p.supervisorEfficacy,p.incidentRate,p.baseDefect].every(x=>Number.isFinite(x)&&x>=0&&x<=1)&&Number.isFinite(p.wearStep)&&p.wearStep>=0&&p.wearStep<=0.1&&Number.isFinite(p.naturalRecovery)&&p.naturalRecovery>=0&&p.naturalRecovery<=0.1&&Number.isInteger(p.criticalDuration)&&p.criticalDuration>=1&&p.criticalDuration<=10000}
 let sensitivityRows=[]
 expField('expCalibrate').addEventListener('click',()=>{
   const p=getExperimentalParams()
