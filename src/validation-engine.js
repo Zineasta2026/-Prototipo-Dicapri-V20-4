@@ -44,8 +44,8 @@ export function simulatePair(params,seed){
       if(defective)defects++
       window.push(defective?1:0)
       if(window.length>24)window.shift()
-      if(active){episode--;wear=Math.min(1,wear+.006)}
-      else wear=Math.max(0,wear-.009)
+      if(active){episode--;wear=Math.min(1,wear+params.wearStep)}
+      else wear=Math.max(0,wear-params.naturalRecovery)
       const count=window.reduce((a,b)=>a+b,0)
       if(controlled&&window.length===24&&count>=params.threshold){
         interventions++;detectedEpisodes++
@@ -79,7 +79,7 @@ export function runExperiment(params){
   const asIsRate=mean(r=>r.asIs.defectRate)
   return {rows,summary:{asIsRate,toBeRate:mean(r=>r.toBe.defectRate),delta,relativeReduction:asIsRate?100*delta/asIsRate:0,ciLow:delta-1.96*sd/Math.sqrt(rows.length),ciHigh:delta+1.96*sd/Math.sqrt(rows.length),asIsEpisodes:mean(r=>r.asIs.episodeCount),toBeEpisodes:mean(r=>r.toBe.episodeCount),asIsStops:mean(r=>r.asIs.criticalStops),toBeStops:mean(r=>r.toBe.criticalStops),asIsDowntime:mean(r=>r.asIs.downtime),toBeDowntime:mean(r=>r.toBe.downtime),asIsProduced:mean(r=>r.asIs.produced),toBeProduced:mean(r=>r.toBe.produced),asIsDefects:mean(r=>r.asIs.defects),toBeDefects:mean(r=>r.toBe.defects),asIsElapsed:mean(r=>r.asIs.elapsed),toBeElapsed:mean(r=>r.toBe.elapsed),completed:rows.every(r=>r.asIs.completed&&r.toBe.completed)}}
 }
-export const DEFAULT_PARAMS={mode:'fixed_units',scenario:'mixed',units:1200,replicates:30,seed:20261025,incidentRate:.004,wearStep:.11,naturalRecovery:.007,baseDefect:.025,wearDefect:.44,threshold:6,operatorEfficacy:.55,supervisorEfficacy:.83,operatorStop:3,supervisorStop:9,failureThreshold:.85,criticalChance:.09,criticalDuration:144}
+export const DEFAULT_PARAMS={mode:'fixed_units',scenario:'mixed',units:1200,replicates:30,seed:20261025,incidentRate:.004,wearStep:.006,naturalRecovery:.007,baseDefect:.025,wearDefect:.44,threshold:6,operatorEfficacy:.55,supervisorEfficacy:.83,operatorStop:3,supervisorStop:9,failureThreshold:.85,criticalChance:.09,criticalDuration:144}
 
 // V20.3: calibración exploratoria únicamente de frecuencia de incidentes.
 // La tasa de referencia reconstruida NO verifica la estructura del simulador.
