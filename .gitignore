@@ -26,3 +26,21 @@ backend/data/inspection_history.jsonl
 *.njsproj
 *.sln
 *.sw?
+
+# Variables de entorno y credenciales
+.env
+.env.*
+
+# Modelos entrenados
+*.pt
+*.pth
+*.onnx
+*.engine
+*.joblib
+
+# Imagenes de demostracion y datasets
+backend/**/*.jpg
+backend/**/*.jpeg
+backend/**/*.png
+backend/**/*.webp
+
