@@ -263,3 +263,12 @@ async def predict(
         }
     )
     return response
+
+
+# Motor experimental V4/V5, separado de los endpoints operativos YOLO/RF.
+try:
+    from .validation.routes import router as validation_router
+except ImportError:
+    from validation.routes import router as validation_router
+
+app.include_router(validation_router)
