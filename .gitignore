@@ -44,3 +44,9 @@ backend/**/*.jpeg
 backend/**/*.png
 backend/**/*.webp
 
+
+# Base de validación local y resultados sintéticos generados
+backend/data/BASE_DE_DATOS_DICAPRI_2025_HIBRIDA_v3.5.xlsx
+backend/data/validation_runs/
+backend/validation/salida/
+backend/validation/salida_v5/
