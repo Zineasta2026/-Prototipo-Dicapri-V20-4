@@ -3,6 +3,7 @@ import './style.css'
 import Chart from 'chart.js/auto'
 import { initMachine3D } from './machine3d.js'
 import { WINDOW_SIZE, recurrenceSummary, recommendedMaintenance } from './recurrence.js'
+import { initV4V5Validation } from './validation-v4v5.js'
 
 const THEME_STORAGE_KEY = 'dicapri-ui-theme-v1'
 const storedTheme = localStorage.getItem(THEME_STORAGE_KEY)
@@ -4937,3 +4938,6 @@ expField('expSensitivityExport').addEventListener('click',()=>{
   const csv=[fields.join(';'),...sensitivityRows.map(r=>fields.map(k=>`"${String(r[k]).replaceAll('"','""')}"`).join(';'))].join('\r\n')
   const url=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='dicapri_v20_4_sensibilidad_sintetica.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
 })
+
+// Integración de los motores experimentales V4/V5 en la sección de validación V20.4.
+initV4V5Validation(experimentPanel)
